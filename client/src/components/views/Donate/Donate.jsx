@@ -1,4 +1,5 @@
 import "./Donate.styles.css"
+import React from "react"
 
 export const Donate = () => (
    <main>

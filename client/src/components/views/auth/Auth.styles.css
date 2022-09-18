@@ -1,8 +1,10 @@
 .auth {
    min-height: 100vh;
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
+   background-color: white;
 }
 
 .auth > form {
@@ -12,6 +14,7 @@
    flex-wrap: wrap;
    justify-content: center;
    flex-direction: column;
+   border: black;
 }
 
 .auth > form > div {
@@ -37,12 +40,12 @@
 }
 
 .auth > form > div > div {
-   color: var(--global-primary-color);
+   color: black;
    font-size: 15px;
 }
 
 .auth h1 {
-   margin: 0;
+   margin: 0 0 20px 0;
    font-size: 25px;
 }
 
@@ -54,6 +57,9 @@
 
 .auth a {
    padding: 0 !important;
+   text-decoration: none;
+   font-weight: bold;
+   text-align: center;
 }
 
 .auth button {
@@ -63,37 +69,101 @@
    border: 0;
    color: white;
    padding: 10px !important;
-   font-size: 16px;
+   font-size: 18px;
+   font-weight: 500;
    cursor: pointer;
 }
 
 .auth button:hover {
-   color: var(--global-primary-color);
+   color: white;
    border-radius: var(--global-radius);
    border: 1px solid var(--global-primary-color);
-   background-color: white;
+   background-color: red;
    padding: 10px !important;
-   font-size: 16px;
+   font-size: 18px;
 }
 
 .auth input.error,
 .auth select.error,
 .auth textarea.error {
    border: 1px solid red;
+   color: var(--global-secondary-color);
 }
 
-.Mui-checked {
-   color: #ff452b !important;
+
+.logo_completo{
+
+   width: 40%;
+   height: 50%;
 }
 
-.MuiSwitch-track {
-   background-color: #ff8b7c !important;
+.equipo {
+   border-radius: var(--global-radius);
+   height: 60%;
+   
+ 
 }
 
-.MuiFormControlLabel-label {
-   font-size: 13px !important;
-   font-family: "Nunito", sans-serif !important;
+.wrapperLogin{
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+
 }
+
+.scale-up-center {
+	-webkit-animation: scale-up-center 1s ease-in-out both;
+	        animation: scale-up-center 1s ease-in-out both;
+}
+
+ 
+@-webkit-keyframes scale-up-center {
+   0% {
+     -webkit-transform: scale(0.5);
+             transform: scale(0.5);
+   }
+   100% {
+     -webkit-transform: scale(1);
+             transform: scale(1);
+   }
+ }
+ @keyframes scale-up-center {
+   0% {
+     -webkit-transform: scale(0.5);
+             transform: scale(0.5);
+   }
+   100% {
+     -webkit-transform: scale(1);
+             transform: scale(1);
+   }
+ }
+ 
+ .flip-vertical-fwd {
+	-webkit-animation: flip-vertical-fwd 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-vertical-fwd 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes flip-vertical-fwd {
+   0% {
+     -webkit-transform: translateZ(0) rotateY(0);
+             transform: translateZ(0) rotateY(0);
+   }
+   100% {
+     -webkit-transform: translateZ(160px) rotateY(360deg);
+             transform: translateZ(160px) rotateY(360deg);
+   }
+ }
+ @keyframes flip-vertical-fwd {
+   0% {
+     -webkit-transform: translateZ(0) rotateY(0);
+             transform: translateZ(0) rotateY(0);
+   }
+   100% {
+     -webkit-transform: translateZ(160px) rotateY(360deg);
+             transform: translateZ(160px) rotateY(360deg);
+   }
+ }
+ 
 
 @media screen and (min-width: 600px) {
    .auth {
@@ -106,4 +176,45 @@
       border-radius: var(--global-radius);
       background-color: white;
    }
-}
+
+
+   }
+
+   
+@media screen and (max-width: 600px) {
+
+   .wrapperLogin{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: auto;
+      height: 100%;
+      align-items: center;
+
+   }
+   .auth {
+      background-color: var(--global-bg-color-soft);
+      height: 100%;
+      justify-content:start;
+      margin-top: 20px;
+     }
+
+   .auth > form {
+      border: var(--global-border);
+      width: 80%;
+      border-radius: var(--global-radius);
+      background-color: white;
+      margin: 0;
+   }
+
+   
+
+   .equipo{
+      margin: 30px 0 0 0;
+      width: 380px;
+      height:auto;
+     
+   }
+
+   
+   }

@@ -1,19 +1,19 @@
 import { lazy, Suspense } from "react"
-import { Routes, Route, Navigate, useLocation } from "react-router-dom"
+import  {Routes, Route, useLocation, Navigate} from "react-router-dom"
 import { AnimatePresence, motion } from "framer-motion"
+
 
 import "./App.css"
 import { Login } from "./components/views/auth/Login/Login"
 import { Tasks } from "./components/views/Tasks/Tasks"
 import { Donate } from "./components/views/Donate/Donate"
 import { Register } from "./components/views/auth/Register/Register"
-import Registered from "./components/views/Registered/Registered"
 
 const Error404 = lazy(() => import("./components/views/Error404/Error404"))
 
 const RequireAuth = ({ children }) => {
   if (!localStorage.getItem("token")) {
-    return <Navigate to="/login" replace={true} />
+    return (<Navigate to="/login" replace={true} />)
   }
   return children
 }
@@ -61,7 +61,7 @@ export const App = () => {
               >
                 <Donate />
               </motion.div>
-            </RequireAuth>
+             </RequireAuth>
           }
         />
         <Route path="/login" element={
@@ -76,20 +76,6 @@ export const App = () => {
           </motion.div>
 
         } />
-        <Route
-          path="/registered/:teamID"
-          element={
-            <motion.div
-              className="page"
-              initial="out"
-              animate="in"
-              exit="out"
-              variants={pageTransition}
-            >
-              <Registered />
-            </motion.div>
-          }
-        />
         <Route path="/register" element={
           <motion.div
             className="page"
